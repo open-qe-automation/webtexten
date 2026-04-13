@@ -3,8 +3,8 @@ import os
 import sys
 import logging
 from config_manager import ConfigManager
-from msuliot.base_64 import Base64 # https://github.com/msuliot/package.utils.git
-from msuliot.data_loader_manager import DataLoaderManager # https://github.com/msuliot/package.data.loaders.git
+from msuliot.base_64 import Base64 
+from msuliot.data_loader_manager import DataLoaderManager 
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
