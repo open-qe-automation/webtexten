@@ -10,10 +10,15 @@ Key Features
 - Logging and Reporting: Maintains detailed logs of the crawling and extraction process, including any errors encountered.
 
 ## Git Repositories
-- https://github.com/msuliot/texten.git
-- https://github.com/msuliot/webtexten.git
-- https://github.com/msuliot/chunken.git
-- https://github.com/msuliot/datamyn.git
+- https://github.com/open-qe-automation/texten.git
+- https://github.com/open-qe-automation/webtexten.git
+- https://github.com/open-qe-automation/chunken.git
+- https://github.com/open-qe-automation/datamyn.git
+
+## Related Packages
+- https://github.com/open-qe-automation/package.utils.git
+- https://github.com/open-qe-automation/package.data.loaders.git
+- https://github.com/open-qe-automation/package.helpers.git
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
@@ -24,16 +29,16 @@ Key Features
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
-- You have installed Python 3.7 or later.
-- You have a working internet connection.
+- Python 3.12 or later
+- pip
 
 ## Installation
 
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/msuliot/webtexten.git
-    cd texten
+    git clone https://github.com/open-qe-automation/webtexten.git
+    cd webtexten
     ```
 
 2. **Set up a virtual environment:**
@@ -49,6 +54,11 @@ Before you begin, ensure you have met the following requirements:
     pip install -r requirements.txt
     ```
 
+    For local development, use dev-requirements.txt:
+    ```bash
+    pip install -r dev-requirements.txt
+    ```
+
 ## Usage
 
 To run the WEBTEXTEN application, use the following command:
@@ -59,13 +69,17 @@ python app.py
 
 ### Configuration
 
-The configuration is managed through a `config.json` file. Create a configuration file with the following structure:
+The configuration is managed through a `config.json` file:
 
 ```json
 {
-  "text_output_directory": "path/to/text/output/directory",
-  "pii_output_directory": "path/to/pii/output/directory",
+  "input_directories": ["../share/input"],
+  "text_output_directory": "../share/text_output",
   "hash_file_path": "file_hashes.json",
   "scheduler_interval": 60
 }
 ```
+
+## Input
+
+WEBTEXTEN reads URLs from files in the input directory. Each file can contain multiple URLs (one per line).
