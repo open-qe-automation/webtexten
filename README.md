@@ -25,6 +25,7 @@ Key Features
 - [Installation](#installation)
 - [Usage](#usage)
 - [Configuration](#configuration)
+- [Testing](#testing)
 
 ## Prerequisites
 
@@ -83,3 +84,14 @@ The configuration is managed through a `config.json` file:
 ## Input
 
 WEBTEXTEN reads URLs from files in the input directory. Each file can contain multiple URLs (one per line).
+
+## Testing
+
+Run tests with pytest:
+
+```bash
+pip install -r dev-requirements.txt
+pytest
+```
+
+Tests are located in the `tests/` directory.
